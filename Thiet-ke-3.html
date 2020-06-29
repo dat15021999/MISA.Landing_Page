@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="CodeMirror/lib/codemirror.js"></script>
+        <link rel="stylesheet" href="CodeMirror/lib/codemirror.css">
+        <script src="CodeMirror/mode/javascript/javascript.js"></script>
+        <style>
+            .nav_bar {
+                width: 100%;
+                height: 50px;
+                background-color: #daaadd;
+            }
+
+            body {
+                background-color: #eee;
+            }
+
+            /* Code miror đang có khoảng viêt là 220px, cấu hình cho editor cao 230px là đẹp */
+            #first_editor {
+                width: 90%;
+                height: 230px;
+                margin-left: 5%;
+                /* -webkit-border-radius: 5px; */
+
+                /* Bị div khác đè lên*/
+                border-radius: 5px;
+                border: 1px solid #C0C4CC;
+                /* background-clip: border-box; */
+            }
+
+            #second_editor {
+                width: 90%;
+                height: 230px;
+                margin-left: 5%;
+                border: 1px solid #C0C4CC;
+                border-radius: 2px;
+            }
+
+            #subject {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 28px;
+                font-weight: bold;
+                margin-left: 20%;
+                margin-top: 2%;
+            }
+
+            .tool_bar {
+                margin-top: 2%;
+                margin-left: 20%;
+                width: 60%;
+                height: 40px;
+                display: flex;
+            }
+
+            #sheet {
+                background-color: #ffffff;
+                height: 650px;
+                width: 60%;
+                margin-left: 20%;
+                border-radius: 2%;
+            }
+
+            .label_name {
+                margin-left: 5%;
+                margin-top: 4%;
+                margin-bottom: 1%;
+            }
+
+            .btn {
+                font-size: 14px;
+                font-family: Arial, Helvetica, sans-serif;
+                width: 15%;
+                margin-right: 2%;
+                background-color: #ffffff;
+                border-radius: 5px;
+                text-align: center;
+                line-height: 40px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <!-- Thanh công cụ -->
+        <div class="nav_bar"></div>
+        
+        <!-- Tiêu đề -->
+        <div id="subject">Thiết lập landing page</div>
+        
+        <!-- Các phím chức năng -->
+        <div class="tool_bar">
+            <div class="btn">Thiết lập chung</div>
+            <div class="btn">Mã chuyển đổi</div>
+
+
+            <!-- 1 div nữa, absolute, css xoay -->
+            <div class="btn" style="color:#ffffff; background-color:#F2613D">Mã Javascript/CSS</div>
+        </div>
+
+        <!-- Trang chính -->
+        <div id="sheet">
+
+            <!-- First Editor -->
+            <div class="label_name" style="padding-top:5%">Đầu HTML (Head)</div>
+            <div id="first_editor"></div>
+
+            <!-- Second Editor -->
+            <div class="label_name">Cuối HTML (Footer)</div>
+            <div id="second_editor"></div>
+
+            <!-- Đây là khoảng trắng tạm thời -->
+            <!-- <div style="color:#ffffff; font-size:30px;">This is space</div> -->
+        </div>
+            
+    </body>
+
+    <script>
+        var editor = CodeMirror(document.getElementById("first_editor"), {
+            lineNumbers: true
+        });
+        var editor = CodeMirror(document.getElementById("second_editor"), {
+            lineNumbers: true
+        });
+
+
+    </script>
+</html>
